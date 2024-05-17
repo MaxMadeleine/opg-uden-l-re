@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 
         body {
             font-family: Arial, sans-serif;
@@ -65,8 +65,38 @@
         }
 
         /* din cool gallery css her */
-        .gallery {
-         
+        #Gallery{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            overflow: hidden;
+        }
+        #bigSection{
+            width: 100%;
+            padding: 0;
+        }
+
+        #tilesSection{
+            display: grid;
+            grid-template-columns: repeat(3, 3fr);
+            grid-template-rows: repeat(3, 3fr);
+            width: 100%;
+            padding: 0;
+        }
+        .tilesImages{
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1/1;
+        }
+        .tilesImages:hover{
+            outline: 1px solid rgb(229, 229, 229);
+            z-index: 999;
+        }
+        #bigimg{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
         }
       
 
@@ -77,40 +107,41 @@
             text-align: center;
         }
 
-        .cookie-policy{
-           position: fixed;
-           top: 0px;
-           left: 0px;
-           
-           min-width:  100%;
-           min-height: 100vh;
-           background-color: rgba(2,2,2,0.5);
-           margin: 0;
-           padding: 0;
-           transition: 200ms;
-
+        .cookie-policy {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            min-width:  100%;
+            min-height: 100vh;
+            background-color: rgba(2, 2, 2, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.8s ease;
+            transform: translateY(-100%);
+            z-index: 1000;
         }
 
+        .cookie-policy.show {
+            transform: translateY(0);
+        }
 
-        .cookie-policy-container{
-           
+        .cookie-policy-container {
             background-color: #ddd;
             padding: 2em;
-           margin-top: 6em;
-
+            text-align: center;
         }
 
-
         .cookie-policy-container form {
-            padding: 4em;
+            padding: 1em 0;
             display: flex;
             flex-direction: column;
-           
         }
 
         .cookie-policy-container input[type="checkbox"] {
             margin-right: 10px;
         }
+
         .cookie-policy-container button {
             padding: 10px;
             font-size: 16px;
@@ -120,15 +151,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .cookie-policy-container button:hover {
             background-color: #0056b3;
-           
         }
-
-        .hidden{
-            min-height: none;
-            height: 0px;
-             top: 100vh;
-      transition: 800ms;
-        }
-
